@@ -1,0 +1,162 @@
+*******************************************************************************
+                             ARENA SIMULATION RESULTS
+                             Project: Route 654 Proposed System
+                             Replication Summary (10 Replications)
+                             Report Generated: 2026-05-16 21:51:53
+*******************************************************************************
+
+Simulation Run Parameters
+-------------------------------------------------------------------------------
+Replication Length                 : 3613.99 Hours
+Warm-Up Period                     : 0.00 Hours
+Base Time Units                    : Minutes
+Number of Replications             : 10
+Random Seed Base                   : 42
+
+Proposed System Interventions
+-------------------------------------------------------------------------------
+Run-Time Scaling Factor             0.90  (10% reduction)
+Dwell-Time Scaling Factor           0.85  (15% reduction)
+Interpretation                     Replication-based discrete-event simulation under
+                                   fixed-demand (observed arrival) structure. Trip
+                                   schedules, arrival times, routing, and bus-to-trip
+                                   assignments are unchanged. Only service-time
+                                   components (run-time and dwell-time distributions)
+                                   are multiplicatively scaled as the experimental
+                                   treatment.
+
+*******************************************************************************
+
+ENTITY STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Half Width    Minimum    Maximum
+-------------------------------------------------------------------------------
+BusTrip.TimeInSystem                    46.9753       0.0338   46.9218   47.0660
+BusTrip.ObservedDuration                52.8922       0.0409   29.1800   77.5500
+BusTrip.AbsoluteError                    8.1616       0.0356    8.0869    8.2432
+
+*******************************************************************************
+
+QUEUE STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Maximum     Current
+-------------------------------------------------------------------------------
+BusQueue                           0.0000    0          0
+Note                               Non-congested — fixed demand, service-time
+                                   reduction only (no structural or demand-side
+                                   changes).
+
+*******************************************************************************
+
+RESOURCE STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Scheduled   Busy        Utilization
+-------------------------------------------------------------------------------
+BusServer                          299238465   28816534   9.63%
+
+*******************************************************************************
+
+COUNTER STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Count
+-------------------------------------------------------------------------------
+Trips Arrived                      102240
+Trips Completed                    102240
+Number Observed                    102240
+
+*******************************************************************************
+
+TALLY STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Half Width   Observations
+-------------------------------------------------------------------------------
+TripDurationError                        8.1616       0.0356       102240
+
+*******************************************************************************
+
+INPUT PARAMETERS
+-------------------------------------------------------------------------------
+Arrival Process                    Observed trip start times (unchanged)
+Run-Time Distribution              Empirical (by direction, segment) scaled by
+                                   0.90
+Dwell-Time Distribution            Empirical (by direction, stop) scaled by
+                                   0.85
+Bus-based Servers                  23 buses (each modeled as Resource, capacity=1)
+Queueing Model                      FIFO queue per bus (deviceid = server channel)
+
+*******************************************************************************
+
+SYSTEM PERFORMANCE SUMMARY
+-------------------------------------------------------------------------------
+Average Time in System             46.9753 Minutes
+Observed Mean Time in System       52.8922 Minutes
+MAE                                8.1616 Minutes
+RMSE                               9.9112 Minutes
+MAPE                               15.1500 %
+Throughput                         2.8290 Trips/Hour
+Average Queue Length (Lq)          0.0000 Trips
+Average Waiting Time (Wq)          0.0000 Minutes
+Maximum Queue Length               0 Trips
+Resource Utilization                9.63%
+Queue Model Status                 Non-congested — fixed demand, service-time
+                                   reduction only (no structural or demand-side
+                                   changes).
+
+*******************************************************************************
+
+STATISTICAL OUTPUTS
+-------------------------------------------------------------------------------
+Simulated Duration Std Dev (per-rep means)    0.0472 Minutes
+Simulated Duration Variance (per-rep means)   0.0022 Minutes^2
+Observed Duration Std Dev (per-trip)          6.6655 Minutes
+Observed Duration Variance (per-trip)         44.4283 Minutes^2
+Observed Duration Min               29.1800 Minutes
+Observed Duration Max               77.5500 Minutes
+Observed Half-Width (95% CI)        0.0409 Minutes
+Observed Sample Size                102240 trips
+Confidence Intervals               95% CI (t-distribution, per-replication means)
+
+*******************************************************************************
+
+MODEL INTERPRETATION AND REPORTING CONSTRAINTS
+-------------------------------------------------------------------------------
+
+The simulation operates under a finite-horizon, replication-based discrete-event
+framework with fixed demand (observed trip schedules) and invariant routing and
+assignment structure. All arrivals, trip sequences, and bus-to-trip allocations
+are unchanged across scenarios. Experimental variation is applied strictly through
+multiplicative scaling of service-time components only (run-time and dwell-time
+distributions).
+
+The system must be interpreted as capacity-overprovisioned unless explicitly
+calibrated otherwise. Consequently:
+
+  - Queue lengths (Lq) and waiting times (Wq) are expected to be approximately
+    zero and must not be interpreted as indicators of system efficiency or
+    congestion.
+  - Resource utilization values must be treated as proxy estimates derived from
+    aggregated service times, not exact stochastic busy-time measurements.
+  - Throughput is a deterministic consequence of fixed demand and simulation
+    horizon, not a capacity outcome, and must not be used as evidence of system
+    improvement.
+
+All performance differences (e.g., MAE, RMSE, MAPE reductions) must be interpreted
+strictly as travel-time calibration effects resulting from service-time scaling,
+not as emergent network or capacity improvements.
+
+Replication outputs must be aggregated using:
+  - weighted means across replications for central tendency
+  - per-replication means for variance estimation and confidence intervals
+
+The model must explicitly avoid interpreting results as steady-state queueing
+behavior. Instead, all outputs represent a finite-horizon observational comparison
+under a controlled counterfactual scenario.
+
+Validity Constraint Statement
+  Results are valid only under fixed demand, overcapacity conditions, and
+  service-time-only interventions, and are not generalizable to congested or
+  demand-responsive systems.
+
+*******************************************************************************
+
+END OF SIMULATION REPORT

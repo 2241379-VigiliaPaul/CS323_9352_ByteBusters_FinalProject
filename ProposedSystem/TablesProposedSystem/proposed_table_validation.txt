@@ -1,0 +1,13 @@
+                        Metric         Value      Units
+                  Replications     10.000000      count
+               Trips simulated 102240.000000      count
+        Observed mean duration     52.892226       mins
+        Proposed mean duration     46.975310       mins
+           Mean Absolute Error      8.161570       mins
+       Root Mean Squared Error      9.911183       mins
+Mean Absolute Percentage Error     15.150039    percent
+                    Throughput      2.829005 trips/hour
+         Avg Queue Length (Lq)      0.000000      trips
+         Avg Waiting Time (Wq)      0.000000       mins
+              Max Queue Length      0.000000      trips
+                    Fleet Size     23.000000      buses

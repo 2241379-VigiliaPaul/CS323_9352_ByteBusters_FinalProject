@@ -1,0 +1,13 @@
+Metric,Value,Units
+Replications,10.0,count
+Trips simulated,102240.0,count
+Observed mean duration,52.89222613458529,mins
+Simulated mean duration,52.584540623369854,mins
+Mean Absolute Error,6.419135628586334,mins
+Root Mean Squared Error,8.296231120114854,mins
+Mean Absolute Percentage Error,12.638897014531796,percent
+Throughput,2.828912040588559,trips/hour
+Avg Queue Length (Lq),0.0,trips
+Avg Waiting Time (Wq),0.0,mins
+Max Queue Length,0.0,trips
+Fleet Size,23.0,buses

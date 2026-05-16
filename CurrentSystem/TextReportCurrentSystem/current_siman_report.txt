@@ -1,0 +1,105 @@
+*******************************************************************************
+                             ARENA SIMULATION RESULTS
+                             Project: Route 654 Current System
+                             Replication Summary (10 Replications)
+                             Report Generated: 2026-05-16 21:13:25
+*******************************************************************************
+
+Simulation Run Parameters
+-------------------------------------------------------------------------------
+Replication Length                 : 3614.11 Hours
+Warm-Up Period                     : 0.00 Hours
+Base Time Units                    : Minutes
+Number of Replications             : 10
+Random Seed Base                   : 42
+
+*******************************************************************************
+
+ENTITY STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Half Width    Minimum    Maximum
+-------------------------------------------------------------------------------
+BusTrip.TimeInSystem                    52.5845       0.0317   52.5244   52.6578
+BusTrip.ObservedDuration                52.8922       0.0409   29.1800   77.5500
+BusTrip.AbsoluteError                    6.4191       0.0254    6.3679    6.4600
+
+*******************************************************************************
+
+QUEUE STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Maximum     Current
+-------------------------------------------------------------------------------
+BusQueue                           0.0000    0          0
+
+*******************************************************************************
+
+RESOURCE STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Scheduled   Busy        Utilization
+-------------------------------------------------------------------------------
+BusServer                          299248329   32257461   10.78%
+
+*******************************************************************************
+
+COUNTER STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Count
+-------------------------------------------------------------------------------
+Trips Arrived                      102240
+Trips Completed                    102240
+Number Observed                    102240
+
+*******************************************************************************
+
+TALLY STATISTICS
+-------------------------------------------------------------------------------
+Identifier                         Average     Half Width   Observations
+-------------------------------------------------------------------------------
+TripDurationError                        6.4191       0.0254       102240
+
+*******************************************************************************
+
+INPUT PARAMETERS
+-------------------------------------------------------------------------------
+Arrival Process                    Observed trip start times
+Run-Time Distribution              Empirical (by direction, segment)
+Dwell-Time Distribution            Empirical (by direction, stop)
+Bus-based Servers                  23 buses (each modeled as Resource, capacity=1)
+Queueing Model                      FIFO queue per bus (deviceid = server channel)
+
+*******************************************************************************
+
+SYSTEM PERFORMANCE SUMMARY
+-------------------------------------------------------------------------------
+Average Time in System             52.5845 Minutes
+Observed Mean Time in System       52.8922 Minutes
+MAE                                6.4191 Minutes
+RMSE                               8.2962 Minutes
+MAPE                               12.6389 %
+Throughput                         2.8289 Trips/Hour
+Average Queue Length (Lq)          0.0000 Trips
+Average Waiting Time (Wq)          0.0000 Minutes
+Maximum Queue Length               0 Trips
+Resource Utilization                10.78%
+Queue Model Status                 Zero congestion — schedule has sufficient slack
+                                   between consecutive same-bus trips
+
+*******************************************************************************
+
+STATISTICAL OUTPUTS
+-------------------------------------------------------------------------------
+Simulated Duration Std Dev (per-rep means)    0.0444 Minutes
+Simulated Duration Variance (per-rep means)   0.0020 Minutes^2
+Observed Duration Std Dev (per-trip)          6.6655 Minutes
+Observed Duration Variance (per-trip)         44.4283 Minutes^2
+Observed Duration Min               29.1800 Minutes
+Observed Duration Max               77.5500 Minutes
+Observed Half-Width (95% CI)        0.0409 Minutes
+Observed Sample Size                102240 trips
+Confidence Intervals               95% CI (t-distribution, per-replication means)
+
+*******************************************************************************
+
+END OF SIMULATION REPORT
+
+*******************************************************************************

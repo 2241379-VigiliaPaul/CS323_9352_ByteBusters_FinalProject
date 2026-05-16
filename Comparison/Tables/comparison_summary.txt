@@ -1,0 +1,103 @@
+                    Metric Baseline Proposed  Change
+ Mean Trip Duration (mins)  52.5845  46.9753 -10.67%
+Mean Absolute Error (mins)   6.4191   8.1616 +27.14%
+               RMSE (mins)   8.2962   9.9112        
+                  MAPE (%)  12.6389  15.1500        
+     Throughput (trips/hr)   2.8289   2.8290        
+     Avg Queue Length (Lq)   0.0000   0.0000        
+Avg Waiting Time (Wq mins)   0.0000   0.0000        
+
+COMPARISON INTERPRETATION (MODEL-GRADE SPECIFICATION)
+-------------------------------------------------------------------------------
+
+0. System Context
+
+This comparison evaluates baseline vs proposed simulation under a fixed-demand, replication-based discrete-event system. All structural elements are invariant:
+
+  Trip schedules (fixed demand)
+  Network structure and routing logic
+  Fleet size and resource allocation
+
+The only intervention is:
+
+  Multiplicative scaling of service-time distributions
+  (run-time = 0.90, dwell-time = 0.85)
+
+1. Evaluation Variables
+
+Let:
+
+  MAE₀, RMSE₀, MAPE₀ = baseline metrics
+  MAE₁, RMSE₁, MAPE₁ = proposed metrics
+
+Define deltas:
+
+  ΔMAE = MAE₁ − MAE₀
+  ΔRMSE = RMSE₁ − RMSE₀
+  ΔMAPE = MAPE₁ − MAPE₀
+
+2. Calibration Decision Rule (Hard Constraint)
+
+Calibration status is defined as:
+
+  IMPROVED if:
+    ΔMAE < 0 AND ΔRMSE < 0 AND ΔMAPE < 0
+  DEGRADED otherwise
+
+This rule is deterministic and overrides all secondary interpretations.
+
+3. Observed Values
+
+  MAE:  6.4191 → 8.1616 (Δ > 0)
+  RMSE: 8.2962 → 9.9112 (Δ > 0)
+  MAPE: 12.6389 → 15.1500 (Δ > 0)
+
+4. Final Classification Output
+
+  Calibration Status: DEGRADED
+  Trigger Condition: at least one error metric increased (Δ ≥ 0)
+
+5. Bias Attribution
+
+The reduction in mean simulated trip duration (52.5845 → 46.9753) is caused exclusively by service-time scaling.
+
+This is classified as:
+
+  systematic downward bias in travel-time estimation
+  not a structural or operational improvement
+
+6. Structural Invariance Assumption
+
+The following are constant:
+
+  Demand process
+  Network topology
+  Routing logic
+  Fleet size
+
+Implications:
+
+  Throughput (~2.8290 trips/hr) is structurally fixed
+  Queue metrics (Lq = 0, Wq = 0) indicate a non-congested regime
+  Queue metrics are not valid performance discriminators
+
+7. Metric Priority Order
+
+  1. Calibration error metrics (MAE, RMSE, MAPE) — primary decision basis
+  2. Mean duration bias — decreased — secondary diagnostic only
+  3. Throughput — invariant structural output
+  4. Queue metrics — non-informative under overcapacity conditions
+
+8. Validity Constraint
+
+This interpretation is valid only under:
+
+  fixed demand
+  service-time-only perturbations
+  overcapacity / non-congested system behavior
+
+It is invalid for:
+
+  congested systems
+  demand-responsive systems
+  structural redesign scenarios

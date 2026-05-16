@@ -1,0 +1,8 @@
+Metric,Baseline,Proposed,Change
+Mean Trip Duration (mins),52.5845,46.9753,-10.67%
+Mean Absolute Error (mins),6.4191,8.1616,+27.14%
+RMSE (mins),8.2962,9.9112,
+MAPE (%),12.6389,15.1500,
+Throughput (trips/hr),2.8289,2.8290,
+Avg Queue Length (Lq),0.0000,0.0000,
+Avg Waiting Time (Wq mins),0.0000,0.0000,
