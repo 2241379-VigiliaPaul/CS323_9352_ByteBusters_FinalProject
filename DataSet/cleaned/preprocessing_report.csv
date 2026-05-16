@@ -1,0 +1,5 @@
+file,rows_in,rows_out,rows_dropped_invalid,rows_dropped_duplicates
+bus_dwell_times_654.csv,191602,191602,0,0
+bus_running_times_654.csv,203128,200679,2386,63
+bus_stops_and_terminals_654.csv,31,29,0,2
+bus_trips_654.csv,10224,10224,0,0
